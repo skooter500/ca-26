@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://d2b6vdvvro2e3"]
+
+[ext_resource type="PackedScene" uid="uid://dh3kqcfi5h3e4" path="res://addons/gremlins_first_person/gremlins_fpc.tscn" id="1_acmat"]
+[ext_resource type="Script" uid="uid://bwagclrbup51m" path="res://3dgame/wall.gd" id="2_51bb6"]
+[ext_resource type="PackedScene" uid="uid://ik6op3aamwce" path="res://3dgame/brick.tscn" id="3_usbey"]
+[ext_resource type="Script" uid="uid://c8g56wssedjef" path="res://3dgame/donut.gd" id="4_usbey"]
+[ext_resource type="AudioStream" uid="uid://bqauxayeawftk" path="res://audio/kornevmusic-epic-478847.mp3" id="5_audkg"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qwsu0"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_acmat"]
+size = Vector2(100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vo5re"]
+albedo_color = Color(0.31764707, 1, 1, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_51bb6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_usbey"]
+albedo_color = Color(0.8499999, 0, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_51bb6"]
+size = Vector3(1.9823608, 0.5272827, 1.8682251)
+
+[node name="root" type="Node3D" unique_id=2093469847]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=162216289]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="ground" type="StaticBody3D" parent="." unique_id=1576254666]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground" unique_id=567974104]
+shape = SubResource("WorldBoundaryShape3D_qwsu0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ground" unique_id=2096318883]
+mesh = SubResource("PlaneMesh_acmat")
+surface_material_override/0 = SubResource("StandardMaterial3D_vo5re")
+
+[node name="FirstPersonCharacter" parent="." unique_id=1111919887 groups=["player"] instance=ExtResource("1_acmat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0377791, 0)
+
+[node name="wall" type="Node3D" parent="." unique_id=988263986]
+transform = Transform3D(0.62450683, -3.413944e-08, -0.78101933, 3.413944e-08, 1, -1.6413328e-08, 0.78101933, -1.6413328e-08, 0.62450683, 33.954582, 0.30478555, -15.440181)
+script = ExtResource("2_51bb6")
+brick_scene = ExtResource("3_usbey")
+
+[node name="donut" type="Area3D" parent="." unique_id=208827511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3829145, 1.1834011, -5.463641)
+script = ExtResource("4_usbey")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="donut" unique_id=240776530]
+mesh = SubResource("TorusMesh_51bb6")
+surface_material_override/0 = SubResource("StandardMaterial3D_usbey")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="donut" unique_id=191879906]
+shape = SubResource("BoxShape3D_51bb6")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="donut" unique_id=851515152]
+stream = ExtResource("5_audkg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2028976949]
+transform = Transform3D(1, 2.9245793e-08, -1.1224944e-08, -2.9245793e-08, 0.7432032, -0.6690658, -1.1224944e-08, 0.6690658, 0.7432032, 20.372887, 2.8203106, -8.11699)
+use_collision = true
+size = Vector3(12.495117, 1, 5.388672)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D" unique_id=2126096269]
+transform = Transform3D(1, -1.04805054e-13, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+operation = 2
+radius = 2.1342773
+
+[connection signal="body_entered" from="donut" to="donut" method="_on_body_entered"]
+
+[editable path="FirstPersonCharacter"]

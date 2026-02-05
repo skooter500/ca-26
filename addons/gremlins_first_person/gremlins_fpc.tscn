@@ -222,6 +222,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52610177, 0)
 
 [node name="Camera" type="Camera3D" parent="Head" unique_id=514043652]
 
+[node name="AudioListener3D" type="AudioListener3D" parent="Head/Camera" unique_id=1850944066]
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1403192]
 shape = SubResource("CapsuleShape3D_5oqox")
 
