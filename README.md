@@ -38,6 +38,34 @@ At the end of the module, each student will have the ability to develop a comple
 - [5 Games Made in Godot to inspire you each week](https://www.youtube.com/@stayathomedev) 
 - [Game dev news channel](https://www.youtube.com/@gamefromscratch)
 
+## Week 3
+- Recap of Godot for 3D
+- Shooting
+- Lighting
+- Third person character
+- NPC's!!
+- BFXR for Godot!!
+- Importing models
+- Animation Player
+
+Task!
+
+Only 14 people sumbitted the work last week so please work on your liminal low poly environment
+
+Register for the [Irish Godot Users Group meetup](https://www.eventbrite.com/e/create-holograms-with-godot-tickets-1982738409958?aff=oddtdtcreator)!!
+Create the environment using CSG nodes
+Create 5 different things for the player to collect in the environment
+Create a user interface that shows how many items the player has collected
+Add lights and fog and experiment with the settings in the WorldEnvironment node to get a nice look
+Upload screenshots to Brightspace
+Add an NPC!
+Add sounds!
+
+Bonus!
+
+Use a Dictionary and create an inventory system where the player can collect items
+
+
 ## Week 2
 - Resources
 - Godot 3D Nodes

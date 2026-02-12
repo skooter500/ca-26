@@ -6,21 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dh3kqcfi5h3e4" path="res://addons/gremlins_first_person/gremlins_fpc.tscn" id="5_a4dwx"]
 [ext_resource type="AudioStream" uid="uid://bqauxayeawftk" path="res://audio/kornevmusic-epic-478847.mp3" id="5_audkg"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_audkg"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_a4dwx"]
-sky_material = SubResource("ProceduralSkyMaterial_audkg")
-
-[sub_resource type="Environment" id="Environment_5wlby"]
-background_mode = 2
-sky = SubResource("Sky_a4dwx")
+[sub_resource type="Environment" id="Environment_audkg"]
+background_mode = 1
 ambient_light_source = 2
-ambient_light_color = Color(0.67481464, 0.67481464, 0.6748146, 1)
-tonemap_mode = 2
-glow_enabled = true
-fog_enabled = true
+ambient_light_color = Color(0.70796657, 0.7079665, 0.7079665, 1)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qwsu0"]
 
@@ -41,7 +30,7 @@ size = Vector3(1.9823608, 0.5272827, 1.8682251)
 [node name="root" type="Node3D" unique_id=2093469847]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1703449949]
-environment = SubResource("Environment_5wlby")
+environment = SubResource("Environment_audkg")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=162216289]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -86,5 +75,6 @@ operation = 2
 radius = 2.1342773
 
 [node name="FirstPersonCharacter" parent="." unique_id=1111919887 instance=ExtResource("5_a4dwx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0400221, 0)
 
 [connection signal="body_entered" from="donut" to="donut" method="_on_body_entered"]
