@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ycrqswunsar3" path="res://3dgame/projectile.gd" id="1_25oqd"]
 [ext_resource type="Material" uid="uid://12bqh76svrfe" path="res://tank_game_3d/blue.tres" id="1_l5kmn"]
+[ext_resource type="PackedScene" uid="uid://dx2v7nxtdy84o" path="res://tank_game_3d/explosion.tscn" id="2_j106k"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kxho2"]
 size = Vector3(0.06, 0.06, 0.06)
@@ -12,6 +13,7 @@ size = Vector3(0.060180664, 0.055786133, 0.06958008)
 [node name="projectile" type="Area3D" unique_id=1363616871]
 script = ExtResource("1_25oqd")
 speed = 5.0
+explosion_scene = ExtResource("2_j106k")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=163046590]
 mesh = SubResource("BoxMesh_kxho2")

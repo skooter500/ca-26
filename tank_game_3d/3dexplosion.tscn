@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8nndvjlbero1"]
+[gd_scene format=3 uid="uid://b8nndvjlbero1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7rj46"]
 transparency = 1
@@ -34,7 +34,7 @@ alpha_curve = SubResource("CurveTexture_vxas0")
 
 [sub_resource type="BoxMesh" id="BoxMesh_7rj46"]
 
-[node name="explosion" type="GPUParticles3D"]
+[node name="explosion" type="GPUParticles3D" unique_id=764696216]
 material_override = SubResource("StandardMaterial3D_7rj46")
 emitting = false
 amount = 100

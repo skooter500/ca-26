@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dx2v7nxtdy84o"]
+[gd_scene format=3 uid="uid://dx2v7nxtdy84o"]
 
 [ext_resource type="AudioStream" uid="uid://bubpef6dosbx2" path="res://sounds/impact_4.wav" id="1_h6mh1"]
 
@@ -32,7 +32,7 @@ color_ramp = SubResource("GradientTexture1D_h6mh1")
 
 [sub_resource type="BoxMesh" id="BoxMesh_q6qou"]
 
-[node name="explosion" type="GPUParticles3D"]
+[node name="explosion" type="GPUParticles3D" unique_id=199000733]
 material_override = SubResource("StandardMaterial3D_7rj46")
 emitting = false
 amount = 150
@@ -44,6 +44,6 @@ trail_enabled = true
 process_material = SubResource("ParticleProcessMaterial_q6qou")
 draw_pass_1 = SubResource("BoxMesh_q6qou")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=889340]
 stream = ExtResource("1_h6mh1")
 autoplay = true
