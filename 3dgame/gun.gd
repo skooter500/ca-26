@@ -6,7 +6,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("fire"):
 		var p = projectile_scene.instantiate()
 		get_tree().root.add_child(p)
-		$AudioStreamPlayer3D.pitch_scale = randf_range(0.8, 1.2)
+		$AudioStreamPlayer3D.pitch_scale = randf_range(0.5, 1.5)
 		$AudioStreamPlayer3D.play()
 		
 		p.global_position = $bullet_spawn.global_position

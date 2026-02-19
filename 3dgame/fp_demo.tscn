@@ -46,6 +46,13 @@ shape = SubResource("WorldBoundaryShape3D_qwsu0")
 mesh = SubResource("PlaneMesh_acmat")
 surface_material_override/0 = SubResource("StandardMaterial3D_vo5re")
 
+[node name="CSGBox3D" type="CSGBox3D" parent="ground" unique_id=829558677]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7900107, 1.5172482)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="ground/CSGBox3D" unique_id=889553954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3794942, -0.6590785)
+operation = 2
+
 [node name="wall" type="Node3D" parent="." unique_id=988263986]
 transform = Transform3D(0.62450683, -3.413944e-08, -0.78101933, 3.413944e-08, 1, -1.6413328e-08, 0.78101933, -1.6413328e-08, 0.62450683, 33.954582, 0.30478555, -15.440181)
 script = ExtResource("2_51bb6")
