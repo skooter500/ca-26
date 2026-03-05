@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dgudu8k6yerys"]
+
+[ext_resource type="Script" uid="uid://oalv6e5ylhfd" path="res://player_week7.gd" id="1_2wdha"]
+[ext_resource type="Script" uid="uid://libmxpwfectm" path="res://node_2d.gd" id="2_2wdha"]
+[ext_resource type="Script" uid="uid://dfee4fsaw5kky" path="res://spawner.gd" id="3_xwsu2"]
+[ext_resource type="PackedScene" uid="uid://cq8c1qpib765r" path="res://block_2d.tscn" id="4_wyata"]
+[ext_resource type="AudioStream" uid="uid://tykko7nf08el" path="res://audio/shoot_sound.sfxr" id="5_q7gxr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2wdha"]
+size = Vector2(130, 127)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_f72ke"]
+
+[node name="Node2D" type="Node2D" unique_id=674852027]
+
+[node name="Label" type="Label" parent="." unique_id=25246974]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=1245960598]
+position = Vector2(399, 302)
+motion_mode = 1
+script = ExtResource("1_2wdha")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=651974062]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_2wdha")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1395237432]
+position = Vector2(274, 464)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=12243547]
+shape = SubResource("WorldBoundaryShape2D_f72ke")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1149897278]
+position = Vector2(662, 187)
+script = ExtResource("2_2wdha")
+
+[node name="Button" type="Button" parent="." unique_id=1588611354]
+offset_left = 138.0
+offset_top = 112.0
+offset_right = 215.0
+offset_bottom = 143.0
+text = "Click Me!"
+
+[node name="Node2D2" type="Node2D" parent="." unique_id=491273534]
+script = ExtResource("3_xwsu2")
+block_scene = ExtResource("4_wyata")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=516121206]
+stream = ExtResource("5_q7gxr")
+
+[connection signal="pressed" from="Button" to="Node2D2" method="_on_button_pressed"]
