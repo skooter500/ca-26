@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://oalv6e5ylhfd" path="res://player_week7.gd" id="1_2wdha"]
 [ext_resource type="Script" uid="uid://libmxpwfectm" path="res://node_2d.gd" id="2_2wdha"]
+[ext_resource type="PackedScene" uid="uid://b1wdau36th566" path="res://bullet.tscn" id="2_beab6"]
+[ext_resource type="AudioStream" uid="uid://bsn3snkrqoky3" path="res://audio/powerup.sfxr" id="2_qwdl4"]
 [ext_resource type="Script" uid="uid://dfee4fsaw5kky" path="res://spawner.gd" id="3_xwsu2"]
 [ext_resource type="PackedScene" uid="uid://cq8c1qpib765r" path="res://block_2d.tscn" id="4_wyata"]
 [ext_resource type="AudioStream" uid="uid://tykko7nf08el" path="res://audio/shoot_sound.sfxr" id="5_q7gxr"]
@@ -21,10 +23,22 @@ offset_bottom = 23.0
 position = Vector2(399, 302)
 motion_mode = 1
 script = ExtResource("1_2wdha")
+bullet_scene = ExtResource("2_beab6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=651974062]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_2wdha")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="player" unique_id=828562336]
+stream = ExtResource("2_qwdl4")
+autoplay = true
+
+[node name="bullet_spawn" type="Node2D" parent="player" unique_id=1353127529]
+position = Vector2(0, -59)
+
+[node name="Timer" type="Timer" parent="player" unique_id=451202968]
+wait_time = 0.2
+one_shot = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1395237432]
 position = Vector2(274, 464)
