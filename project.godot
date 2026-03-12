@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Computational Arts"
-run/main_scene="uid://dgudu8k6yerys"
+run/main_scene="uid://dko32oq0auss4"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 

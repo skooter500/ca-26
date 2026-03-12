@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dko32oq0auss4"]
+
+[ext_resource type="Script" uid="uid://brukgvtcf4s6g" path="res://colored_life.gd" id="1_d0vjh"]
+
+[node name="colored_life" type="Node2D" unique_id=2113039074]
+script = ExtResource("1_d0vjh")

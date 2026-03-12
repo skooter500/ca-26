@@ -45,7 +45,7 @@ At the end of the module, each student will have the ability to develop a comple
 ## Week 6
 - Intro to 2D drawing and nodes
 ## Week 5
-
+- Tweens!!!
 ## Week 4
 ## Week 3
 - Recap of Godot for 3D
