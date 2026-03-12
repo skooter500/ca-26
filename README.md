@@ -38,6 +38,15 @@ At the end of the module, each student will have the ability to develop a comple
 - [5 Games Made in Godot to inspire you each week](https://www.youtube.com/@stayathomedev) 
 - [Game dev news channel](https://www.youtube.com/@gamefromscratch)
 
+## Week 7
+- Task Create a 2D system with appropriate nodes, signals, some GDScript
+- Have movement, color, player control, shooting and hitting things, scoring, maybe a pickup
+- Draw everything in code
+## Week 6
+- Intro to 2D drawing and nodes
+## Week 5
+
+## Week 4
 ## Week 3
 - Recap of Godot for 3D
 - Shooting

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dh3kqcfi5h3e4" path="res://addons/gremlins_first_person/gremlins_fpc.tscn" id="5_a4dwx"]
 [ext_resource type="AudioStream" uid="uid://bqauxayeawftk" path="res://audio/kornevmusic-epic-478847.mp3" id="5_audkg"]
 [ext_resource type="PackedScene" uid="uid://2yfluwa6ndvl" path="res://3dgame/gun.tscn" id="6_a4dwx"]
+[ext_resource type="Script" uid="uid://cdvspq1wy070d" path="res://3dgame/character_body_3d.gd" id="7_5wlby"]
 
 [sub_resource type="Environment" id="Environment_audkg"]
 background_mode = 1
@@ -27,6 +28,8 @@ albedo_color = Color(0.8499999, 0, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_51bb6"]
 size = Vector3(1.9823608, 0.5272827, 1.8682251)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0tcw1"]
 
 [node name="root" type="Node3D" unique_id=2093469847]
 
@@ -88,7 +91,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0400221, 0)
 [node name="gun" parent="FirstPersonCharacter/Head/Camera" parent_id_path=PackedInt32Array(1111919887, 514043652) index="1" unique_id=255565113 instance=ExtResource("6_a4dwx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46313477, -0.1600939, -0.6249975)
 
-[node name="Timer" type="Timer" parent="." unique_id=350188682]
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=475709212]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.8871394)
+script = ExtResource("7_5wlby")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=2049457744]
+mesh = SubResource("CylinderMesh_0tcw1")
 
 [connection signal="body_entered" from="donut" to="donut" method="_on_body_entered"]
 
