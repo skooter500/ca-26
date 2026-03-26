@@ -4,6 +4,8 @@
 Greetings fellow octopus
 ```
 
+# A squid eating dough in a polyetheline bag is fast and bulbus
+
 # Introduction
 
 Computational Arts builds upon the foundational programming skills developed in Creative Coding. This module explores the diverse applications of programming in creative fields, with a focus on game development and creative media.
