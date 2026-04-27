@@ -41,12 +41,6 @@ Your experience can be as boring or as interesting or as personal or generic as 
 - Publish on Itch.io & github
 - Use the examples that we are developing as starter code
 
-You must include:
-
-- A user interface for making sounds
-- Self created assets such as images and sounds
-- Code in GDScript that you write yourself
-
 In class demo at the end of the semester
 
 Indicitive Marking Scheme:
